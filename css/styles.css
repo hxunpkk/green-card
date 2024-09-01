@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ol, ul, dl, li, dt, dd {
+    list-style: none;
+}
+a, a:hover, a:focus, a:link, a:visited, a:active {
+    text-decoration: none;
+    color: #000;
+}
+
+
+/* header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 0 15%;
+    width: 100%;
+    height: 102px;
+}
+
+header .logo {
+    aspect-ratio: 130/40;
+    width: 130px;
+    height: auto;
+    background: url(../images/logo.svg) center/contain no-repeat;
+}
+
+header .nav_depth1 {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 60px;
+    /* margin-left: 250px; */
+}
+
+header .nav_depth1 li {
+    position: relative;
+}
+
+header .nav_depth2 {
+    display: block;
+    position: absolute;
+    min-width: 100%;
+    top: 85px;
+    left: -1px;
+    text-align: center;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+header .nav_depth1 li:nth-of-type(3) .nav_depth2 {
+    left: -43px;
+}
+
+header .nav_depth2 li:not(:first-child) {
+    margin-top: 15px;
+}
+
+header .download-btn {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 100px;
+    text-align: center;
+    border: 1px solid #25c18d;
+    color: #25c18d;
+    background-color: #fff;
+}
+
+header .nav_depth2_bg {
+    display: flex;
+    align-items: center;
+    padding: 0 15%;
+    position: fixed;
+    left: 0;
+    top: 102px;
+    height: 208px;
+    width: 100%;
+    border-top: 1px solid #e5e5e5;
+    box-shadow: 0 6px 16px rgb(15 21 34 / 4%);
+}
+header .nav_depth2_banner {
+    aspect-ratio: 265/129;
+    width: 265px;
+    height: auto;
+    background: url(../images/_header_banner_bccard.png) center/contain no-repeat;
+}
