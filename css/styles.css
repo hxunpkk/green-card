@@ -14,6 +14,16 @@ em {
     font-style: normal;
     font-weight: bold;
 }
+table {
+    border-spacing: 0;
+}
+details > summary {
+    list-style: none;
+}
+  
+details summary::-webkit-details-marker {
+    display:none;
+}
 
 
 /* header */
@@ -49,6 +59,32 @@ header .nav_depth1 li {
     position: relative;
 }
 
+header .nav_depth1 > li > a:hover {
+    font-weight: bold;
+}
+
+header .nav_depth1 > li > a:hover:after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 0;
+    width: 8px;
+    height: 8px;
+    background: url(../images/bg-leaf.svg)center/contain no-repeat;
+}
+
+:has(header .nav_depth1 li > a:focus) .nav_depth2,
+:has(header .nav_depth2:hover) .nav_depth2,
+:has(header .nav_depth2_bg:hover) .nav_depth2 {
+    display: block;
+}
+:has(header .nav_depth1 li > a:focus) .nav_depth2_bg,
+:has(header .nav_depth2:hover) .nav_depth2_bg,
+:has(header .nav_depth2_bg:hover) .nav_depth2_bg  {
+    display: flex;
+}
+
+
 header .nav_depth2 {
     display: none;
     position: absolute;
@@ -58,6 +94,14 @@ header .nav_depth2 {
     text-align: center;
     font-size: 14px;
     white-space: nowrap;
+    z-index: 3;
+}
+
+header .nav_depth2 li > a:hover {
+    color: #fff;
+    font-weight: bold;
+    background-color: #25c18d;
+    border-radius: 30px;
 }
 
 header .nav_depth1 li:nth-of-type(3) .nav_depth2 {
@@ -89,6 +133,7 @@ header .nav_depth2_bg {
     height: 208px;
     width: 100%;
     border-top: 1px solid #e5e5e5;
+    background-color: #fff;
     box-shadow: 0 6px 16px rgb(15 21 34 / 4%);
 }
 header .nav_depth2_banner {
@@ -115,12 +160,24 @@ main .main_nav {
     display: flex;
 }
 
-main .main_nav a {
+main .main_nav details summary {
     margin-right: 20px;
     font-size: 20px;
     color: #999999;
 }
 
+main .main_nav details[open] summary{
+    font-weight: bold;
+    color: #000;
+    text-decoration: underline;
+}
+
+:has(main .main_nav li:nth-child(1) details[open]) .main_content_1 {
+    display: block;
+}
+:has(main .main_nav li:nth-child(2) details[open]) .main_content_2 {
+    display: block;
+}
 
 /* main_content_1 */
 main .main_content_1 {
@@ -260,10 +317,84 @@ main .main_content_1 .bottom_box .call_box > div:not(:last-child) {
 
 /* main_content_2 */
 
+main .main_content_2 {
+    display: none;
+    background-color: #F9FAFC;
+    box-shadow: 0 0 0 100vmax #F9FAFC;
+    clip-path: inset(0 -100vmax);
+}
 
+main .main_content_2 .top_box {
+    padding-top: 60px;
+}
 
+main .main_content_2 .top_box ul {
+    display: flex;
+    gap: 5px;
+}
 
+main .main_content_2 .top_box ul li {
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 13px;
+    border-radius: 100px;
+    border: 1px solid #e5e5e5;
+    color: #4c4c4c;
+    background-color: #fff;
+}
 
+main .main_content_2 .main_box_list {
+    margin-top: 40px;
+    padding: 24px 50px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+main .main_content_2 .list_title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+main .main_content_2 .list_title::after {
+    content: '>';
+    position: absolute;
+    top: 37px;
+    right: 20px;
+    transform: rotate(90deg);
+    font-size: 16px;
+    margin-top: -16px;
+}
+
+main .main_content_2 details[open] .list_title::after {
+    content: '<';
+}
+
+main .main_content_2 details[open] .list_detail {
+    padding: 24px 20px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 15px;
+}
+
+main .main_content_2 .table_container th, main .main_content_2 .table_container td {
+    height: 54px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+main .main_content_2 .table_container th {
+    font-weight: bold;
+    background-color: #ebedef;
+    padding: 16px 24px;
+}
+
+main .main_content_2 .table_container td {
+    border-left: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
 
 
 /* footer */
@@ -304,4 +435,8 @@ footer .footer_depth li:not(:first-child) {
 footer .footer_depth li a {
     font-size: 13px;
     color: #808080;
+}
+
+footer .footer_depth li a:hover {
+    color: #000;
 }
