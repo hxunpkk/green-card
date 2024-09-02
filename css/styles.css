@@ -100,7 +100,9 @@ header .nav_depth2_banner {
 
 /* main */
 main .wrap {
-    padding: 0 15%;
+    margin: 0 auto;
+    max-width: 1260px;
+    padding: 0 8%;
     width: 100%;
 }
 
@@ -121,11 +123,26 @@ main .main_nav a {
 
 
 /* main_content_1 */
+main .main_content_1 {
+    display: none;
+}
+
+main .main_content_1 h3 {
+    margin: 24px 0 36px;
+    font-size: 24px;
+}
+
+main .main_content_1 h4 {
+    margin: 40px 0 20px;
+    font-size: 20px;
+}
+
 main .main_content_1 .top_box {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 48px;
+    margin-bottom: 40px;
 }
 
 main .main_content_1 .top_box .left_box {
@@ -164,6 +181,88 @@ main .main_content_1 .top_box .right_box .right_box_list li {
     list-style: initial;
     color: #4c4c4c;
 }
+
+main .main_content_1 .main_box {
+    padding: 60px 0;
+    width: 100%;
+    background-color: #F9FAFC;
+    box-shadow: 0 0 0 100vmax #F9FAFC;
+    clip-path: inset(0 -100vmax);
+}
+
+main .main_content_1 .main_box .section_service ul {
+    padding-left: 20px;
+}
+
+main .main_content_1 .main_box .section_service ul li {
+    list-style: initial;
+    color: #4c4c4c;
+    font-size: 16px;
+}
+
+main .main_content_1 .main_box .section_call > ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+main .main_content_1 .main_box .section_call > ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    width: 24%;
+    border-radius: 15px;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+main .main_content_1 .main_box .section_call > ul li strong {
+    font-size: 20px;
+}
+
+
+main .main_content_1 .bottom_box ul {
+    padding-left: 20px;
+}
+
+main .main_content_1 .bottom_box ul li {
+    list-style: initial;
+    color: #4c4c4c;
+    font-size: 16px;
+}
+
+main .main_content_1 .bottom_box .call_box {
+    display: flex;
+    margin: 20px 0 120px;
+    border: 1px solid #e5e5e5;
+}
+
+main .main_content_1 .bottom_box .call_box > div {
+    text-align: center;
+    padding: 20px;
+    width: 30%;
+}
+
+main .main_content_1 .bottom_box .call_box > div:nth-of-type(even) {
+    width: 20%;
+}
+
+main .main_content_1 .bottom_box .call_box > div:not(:last-child) {
+    border-right: 1px solid #e5e5e5;
+}
+
+
+
+
+
+/* main_content_2 */
+
+
+
+
 
 
 
